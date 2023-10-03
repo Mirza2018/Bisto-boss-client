@@ -1,9 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-
-    const [disible, setDisibal] = useState(true)
+    const [disible, setDisibale] = useState(true)
+    const { handleLogin, user } = useContext(AuthContext)
+    console.log(user);
     const captchaRef = useRef(null)
     useEffect(() => {
         loadCaptchaEnginge(7)
@@ -17,8 +20,8 @@ const Login = () => {
         if (validateCaptcha(captcha)) {
             console.log('done');
             captchaRef.current.value = "";
-           
-            setDisibal(false)
+
+            setDisibale(false)
         }
         else {
             console.log("nope");
@@ -31,6 +34,13 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
+        handleLogin(email, password)
+            .then(res => {
+                console.log(res.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -55,7 +65,8 @@ const Login = () => {
                             </label>
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                New user?<Link to='/signup'> <a href="#" className="label-text-alt link link-hover">Sign Up</a></Link>
+
                             </label>
                         </div>
 
