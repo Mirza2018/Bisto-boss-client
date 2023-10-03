@@ -1,31 +1,31 @@
-import { useContext, useEffect, useRef, useState } from 'react';
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { useContext, useEffect,  useState } from 'react';
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const [disible, setDisibale] = useState(true)
     const { handleLogin, user } = useContext(AuthContext)
     console.log(user);
-    const captchaRef = useRef(null)
     useEffect(() => {
         loadCaptchaEnginge(7)
     }, [])
 
-    const handleCaptcha = () => {
-        const captcha = captchaRef.current.value;
+    const handleCaptcha = (e) => {
+        const captcha = e.target.value;
 
         console.log(captcha);
 
         if (validateCaptcha(captcha)) {
             console.log('done');
-            captchaRef.current.value = "";
+          
 
             setDisibale(false)
         }
         else {
             console.log("nope");
-            captchaRef.current.value = "";
+            
         }
     }
 
@@ -37,6 +37,13 @@ const Login = () => {
         handleLogin(email, password)
             .then(res => {
                 console.log(res.user);
+              
+                Swal.fire(
+                    'Login successfully done!',
+                    'You Logged in!',
+                    'success'
+                )
+                e.target.value= "";
             })
             .catch(error => {
                 console.log(error);
@@ -77,8 +84,8 @@ const Login = () => {
 
 
                             </label>
-                            <input type="input" name="captcha" placeholder="type text captcha abobe" ref={captchaRef} className="input input-bordered" required />
-                            <button onClick={handleCaptcha} className='btn btn-outline mt-2'>Validate</button>
+                            <input onBlur={handleCaptcha} type="input" name="captcha" placeholder="type text captcha abobe"className="input input-bordered" required />
+                          
                         </div>
 
 
