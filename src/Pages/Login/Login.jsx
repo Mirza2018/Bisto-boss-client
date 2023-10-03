@@ -1,35 +1,46 @@
-import { useContext, useEffect,  useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Login = () => {
     const [disible, setDisibale] = useState(true)
     const { handleLogin, user } = useContext(AuthContext)
-    console.log(user);
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from=location.state?.from?.pathname|| '/'
+
+
+        console.log(user);
     useEffect(() => {
         loadCaptchaEnginge(7)
     }, [])
+    const useCaptcha=useRef()
 
-    const handleCaptcha = (e) => {
-        const captcha = e.target.value;
 
+    const handleCaptcha = () => {
+        const captcha = useCaptcha.current.value
         console.log(captcha);
 
         if (validateCaptcha(captcha)) {
             console.log('done');
-          
-
             setDisibale(false)
         }
         else {
+            setDisibale(true)
+            Swal.fire(
+                'Worng Captcha!',
+                'Worng',
+                'error'
+            )
             console.log("nope");
-            
+
         }
     }
 
     const handleForm = (e) => {
+        
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
@@ -37,13 +48,14 @@ const Login = () => {
         handleLogin(email, password)
             .then(res => {
                 console.log(res.user);
-              
+
                 Swal.fire(
                     'Login successfully done!',
                     'You Logged in!',
                     'success'
                 )
-                e.target.value= "";
+                e.target.value = "";
+                navigate(from)
             })
             .catch(error => {
                 console.log(error);
@@ -84,14 +96,15 @@ const Login = () => {
 
 
                             </label>
-                            <input onBlur={handleCaptcha} type="input" name="captcha" placeholder="type text captcha abobe"className="input input-bordered" required />
-                          
+                            <input ref={useCaptcha} type="text" name="captcha" placeholder="type text captcha abobe" className="input input-bordered" required />
+                            <button onClick={handleCaptcha} className='btn btn-outline'>Login</button>
+
                         </div>
 
 
-                        <div className="form-control mt-6">
+                        {/* <div className="form-control mt-6">
                             <button disabled={disible} className="btn btn-primary">Submit</button>
-                        </div>
+                        </div> */}
 
                         {/* <LoadCanvasTemplate />
                         componentDidMount () {
