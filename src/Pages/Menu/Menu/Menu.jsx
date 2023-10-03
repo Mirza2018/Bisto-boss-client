@@ -10,6 +10,7 @@ import MenuCategory from "../MenuCategory/MenuCategory";
 import Cover from "../../Shared/Cover/Cover";
 
 const Menu = () => {
+
     const [menu] = useMenu()
     const dessert = menu.filter(item => item.category === 'dessert')
     const soup = menu.filter(item => item.category === 'soup')
@@ -28,10 +29,10 @@ const Menu = () => {
                 subHeading="today's offer"
             ></SectionTitle>
             <MenuCategory items={offered} img={img}></MenuCategory>
-            <MenuCategory items={dessert} img={img1} title='Dessert menu'></MenuCategory>
-            <MenuCategory items={pizza} img={img2} title='Pizza menu'></MenuCategory>
-            <MenuCategory items={salad} img={img3} title='Salad menu'></MenuCategory>
-            <MenuCategory items={soup} img={img4} title='Soup menu'></MenuCategory>
+            <MenuCategory items={dessert} img={img1} title='dessert'></MenuCategory>
+            <MenuCategory items={pizza} img={img2} title='pizza'></MenuCategory>
+            <MenuCategory items={salad} img={img3} title='salad'></MenuCategory>
+            <MenuCategory items={soup} img={img4} title='soup'></MenuCategory>
         </div>
     );
 };
