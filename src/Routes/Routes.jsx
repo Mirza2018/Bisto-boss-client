@@ -8,6 +8,8 @@ import Order from "../Pages/Order/Order";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/Login/SignUp";
 import PrivetRoute from "./PrivetRoute";
+import Dhasboard from "../Layout/Dhasboard";
+import MyCart from "../Pages/DashBoard/MyCart/MyCart";
 
 export const router = createBrowserRouter([
   {
@@ -24,16 +26,26 @@ export const router = createBrowserRouter([
       },
       {
         path: "/order/:category",
-        element: <PrivetRoute><Order></Order></PrivetRoute>
+        element: <Order></Order>
       }
     ]
   },
-{
-  path:'/login',
-  element:<Login></Login>
-},
-{
-  path:'/signup',
-  element:<SignUp></SignUp>
-},
+  {
+    path: '/login',
+    element: <Login></Login>
+  },
+  {
+    path: '/signup',
+    element: <SignUp></SignUp>
+  },
+  {
+    path: 'dashboard',
+    element: <Dhasboard></Dhasboard>,
+    children: [
+      {
+        path: 'mycart',
+        element: <MyCart></MyCart>
+      }
+    ]
+  }
 ]);  

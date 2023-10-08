@@ -1,18 +1,28 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../../hooks/useCart";
 
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext)
+  const {cart}=useCart()
+    console.log(cart);
     const lis = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Menu</Link></li>
         <li><Link to='/order/salad'>Order</Link></li>
+        <li><Link to='/dashboard/mycart'>Dashbord</Link></li>
+        <li><Link to='/'>
+            <button className="btn">
+                <FaShoppingCart />
+                <div className="badge badge-secondary">+{cart?.length || 0}</div>
+            </button></Link></li>
 
         {user ? <>
-        <li> <button onClick={logOut} className="btn btn-ghost">Log Out</button></li>
-           
+            <li> <button onClick={logOut} className="btn btn-ghost">Log Out</button></li>
+
         </> : <>
             <li><Link to='/login'>Login</Link></li>
         </>}
@@ -34,7 +44,7 @@ const Navber = () => {
                 <a className="btn btn-ghost normal-case text-xl">Bistro Boss</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 flex items-center justify-center">
                     {lis}
                 </ul>
             </div>
