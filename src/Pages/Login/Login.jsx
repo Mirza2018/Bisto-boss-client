@@ -3,20 +3,22 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+
 
 const Login = () => {
     const [disible, setDisibale] = useState(true)
     const { handleLogin, user } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
-    const from=location.state?.from?.pathname|| '/'
+    const from = location.state?.from?.pathname || '/'
 
 
-        console.log(user);
+    console.log(user);
     useEffect(() => {
         loadCaptchaEnginge(7)
     }, [])
-    const useCaptcha=useRef()
+    const useCaptcha = useRef()
 
 
     const handleCaptcha = () => {
@@ -40,7 +42,7 @@ const Login = () => {
     }
 
     const handleForm = (e) => {
-        
+
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
@@ -87,6 +89,7 @@ const Login = () => {
                                 New user?<Link to='/signup'> <a href="#" className="label-text-alt link link-hover">Sign Up</a></Link>
 
                             </label>
+
                         </div>
 
                         <div className="form-control">
@@ -97,7 +100,7 @@ const Login = () => {
 
                             </label>
                             <input ref={useCaptcha} type="text" name="captcha" placeholder="type text captcha abobe" className="input input-bordered" required />
-                            <button onClick={handleCaptcha} className='btn btn-outline'>Login</button>
+                            <button onClick={handleCaptcha} className='btn btn-outline'>Sign In</button>
 
                         </div>
 
@@ -110,7 +113,9 @@ const Login = () => {
                         componentDidMount () {
                             loadCaptchaEnginge(6)
                         } */}
+                        <SocialLogin></SocialLogin>
                     </form>
+
                 </div>
             </div>
         </div>

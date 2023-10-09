@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const SignUp = () => {
@@ -12,23 +13,46 @@ const SignUp = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
 
     const onSubmit = (data) => {
+        const saveData = { name: data.name, email: data.email }
         console.log(data)
         handleSignIn(data.email, data.password)
             .then(res => {
+
                 updateUserProfile(data.name, data.url)
                     .then(() => { })
                     .catch(error => console.log(error))
-                console.log(res.user);
-                Swal.fire(
-                    'Successfully Sign Up!',
-                    'You clicked the button!',
-                    'success'
-                )
-                navigate('/')
+
+
+
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveData)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.insertedId) {
+                            reset()
+                            Swal.fire(
+                                'Successfully Sign Up!',
+                                'You clicked the button!',
+                                'success'
+                            )
+                            navigate('/')
+
+                        }
+                    })
+                console.log(res);
+
+
             })
             .catch(error => {
                 console.log(error);
@@ -121,6 +145,7 @@ const SignUp = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Sign Up</button>
                             </div>
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                 </div>
