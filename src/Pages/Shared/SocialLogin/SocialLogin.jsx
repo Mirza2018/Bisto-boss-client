@@ -13,7 +13,7 @@ const SocialLogin = () => {
             .then(res => {
                 const logedInUser = res.user;
                 console.log(logedInUser);
-                const saveData = { name: logedInUser.name, email: logedInUser.email }
+                const saveData = { name: logedInUser.displayName, email: logedInUser.email }
 
 
                 fetch('http://localhost:5000/users', {
@@ -24,17 +24,17 @@ const SocialLogin = () => {
                     body: JSON.stringify(saveData)
                 })
                     .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.insertedId) {
-                            Swal.fire(
-                                'Successfully Sign Up!',
-                                'You clicked the button!',
-                                'success'
-                            )
+                    .then(() => {
 
-                            navigate(from, { replace: true })
-                        }
+
+                        Swal.fire(
+                            'Successfully Sign Up!',
+                            'You clicked the button!',
+                            'success'
+                        )
+
+                        navigate(from, { replace: true })
+
                     })
 
 
