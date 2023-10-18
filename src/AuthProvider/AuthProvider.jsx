@@ -21,6 +21,7 @@ const AuthProvider = ({ children }) => {
                     .then(data => {
                         console.log(data.data.token, 'axios data');
                         localStorage.setItem('access-token', data.data.token)
+                        setLoadding(false)
                     })
 
             }
@@ -28,7 +29,7 @@ const AuthProvider = ({ children }) => {
                 localStorage.removeItem('access-token')
             }
 
-            setLoadding(false)
+
         })
 
         return () => {

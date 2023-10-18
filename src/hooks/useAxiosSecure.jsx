@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
 import axios from 'axios';
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import useAuth from './useAuth';
 
 
 
 const useAxiosSecure = () => {
-  const { logOut } = useContext(AuthContext); 
+  const { logOut } = useAuth(); 
   const navigate = useNavigate(); 
 
   const axiosSecure = axios.create({
@@ -16,6 +15,7 @@ const useAxiosSecure = () => {
 
   useEffect(() => {
     axiosSecure.interceptors.request.use((config) => {
+      
       const token = localStorage.getItem('access-token');
       if (token) {
         config.headers.Authorization = `bearer ${token}`;
@@ -23,8 +23,7 @@ const useAxiosSecure = () => {
       return config;
     });
 
-    axiosSecure.interceptors.response.use(
-      (response) => response,
+    axiosSecure.interceptors.response.use((response) => response,
       async (error) => {
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
           await logOut();
