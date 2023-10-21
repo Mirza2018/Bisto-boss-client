@@ -19,7 +19,7 @@ const SignUp = () => {
 
     const onSubmit = (data) => {
         const saveData = { name: data.name, email: data.email }
-        console.log(data)
+        //console.log(data)
         handleSignIn(data.email, data.password)
             .then(res => {
 
@@ -38,7 +38,7 @@ const SignUp = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        //console.log(data);
                         if (data.insertedId) {
                             reset()
                             Swal.fire(
@@ -50,7 +50,7 @@ const SignUp = () => {
 
                         }
                     })
-                console.log(res);
+                //console.log(res);
 
 
             })
@@ -65,13 +65,13 @@ const SignUp = () => {
     //     e.preventDefault()
     //     const email = e.target.email.value;
     //     const password = e.target.password.value;
-    //     console.log(email, password);
+    //    //console.log(email, password);
     //     handleSignIn(email, password)
     //         .then(res => {
-    //             console.log(res.user);
+    //            //console.log(res.user);
     //         })
     //         .catch(error => {
-    //             console.log(error);
+    //            console.log(error);
     //         })
     // }
 

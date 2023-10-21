@@ -12,7 +12,7 @@ const SocialLogin = () => {
         handleGoogle()
             .then(res => {
                 const logedInUser = res.user;
-                console.log(logedInUser);
+                //console.log(logedInUser);
                 const saveData = { name: logedInUser.displayName, email: logedInUser.email }
 
 

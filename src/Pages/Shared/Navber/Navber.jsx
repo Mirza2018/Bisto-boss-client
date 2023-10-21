@@ -7,8 +7,8 @@ import useCart from "../../../hooks/useCart";
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext)
-  const {cart}=useCart()
-    console.log(cart);
+    const { cart } = useCart()
+    //console.log(cart);
     const lis = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Menu</Link></li>
@@ -29,7 +29,7 @@ const Navber = () => {
 
     </>
 
-    console.log(user);
+    //console.log(user);
     return (
         <div className="navbar fixed z-10 bg-opacity-30 text-white bg-black max-w-screen-xl">
             <div className="navbar-start">

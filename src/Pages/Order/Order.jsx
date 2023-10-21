@@ -9,15 +9,15 @@ import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const Order = () => {
-    const categories = ['salad','pizza','soup','dessert','drinks'];
+    const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks'];
     const { category } = useParams()
     const initialIndex = categories.indexOf(category)
 
     const [tabIndex, setTabindex] = useState(initialIndex)
     const [menu] = useMenu()
 
-    console.log(category);
-    console.log(initialIndex,'initialIndex');
+    //console.log(category);
+    //console.log(initialIndex,'initialIndex');
 
 
     const dessert = menu.filter(item => item.category === 'dessert')

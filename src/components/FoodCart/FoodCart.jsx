@@ -15,7 +15,7 @@ const FoodCart = ({ item }) => {
 
 
     const handleAddToCart = (item) => {
-        console.log(item);
+        //console.log(item);
         if (user && user.email) {
             const orderItem = { menuItemId: _id, name, image, price, email: user.email }
             fetch('http://localhost:5000/carts', {
@@ -27,7 +27,7 @@ const FoodCart = ({ item }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    //console.log(data);
                     if (data.insertedId) {
                         refetch() //refetch the items in the cart
                         Swal.fire({

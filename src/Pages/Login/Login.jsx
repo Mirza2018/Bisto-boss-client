@@ -14,7 +14,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
 
 
-    console.log(user);
+    //console.log(user);
     useEffect(() => {
         loadCaptchaEnginge(7)
     }, [])
@@ -23,10 +23,10 @@ const Login = () => {
 
     const handleCaptcha = () => {
         const captcha = useCaptcha.current.value
-        console.log(captcha);
+        //console.log(captcha);
 
         if (validateCaptcha(captcha)) {
-            console.log('done');
+            //console.log('done');
             setDisibale(false)
         }
         else {
@@ -36,7 +36,7 @@ const Login = () => {
                 'Worng',
                 'error'
             )
-            console.log("nope");
+            //console.log("nope");
 
         }
     }
@@ -46,10 +46,10 @@ const Login = () => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        //console.log(email, password);
         handleLogin(email, password)
             .then(res => {
-                console.log(res.user);
+                //console.log(res.user);
 
                 Swal.fire(
                     'Login successfully done!',

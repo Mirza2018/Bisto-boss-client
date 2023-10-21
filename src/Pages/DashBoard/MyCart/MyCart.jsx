@@ -6,10 +6,10 @@ import Swal from "sweetalert2";
 
 
 const MyCart = () => {
-    const { cart,refetch } = useCart()
+    const { cart, refetch } = useCart()
 
     const abc = cart.reduce((a, b) => a + parseFloat(b.price), 0)
-    console.log(abc);
+    //console.log(abc);
     const handleDelete = (id) => {
 
         Swal.fire({
