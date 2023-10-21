@@ -19,8 +19,8 @@ const useAxiosSecure = () => {
       const token = localStorage.getItem('access-token');
       if (token) {
         config.headers.Authorization = `bearer ${token}`;
+        return config;
       }
-      return config;
     });
 
     axiosSecure.interceptors.response.use((response) => response,
