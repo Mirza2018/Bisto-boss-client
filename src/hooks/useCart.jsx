@@ -12,7 +12,7 @@ const useCart = () => {
         enabled: !loadding,
         queryFn: async () => {
             const res = await axiosSecure(`/carts?email=${user?.email}`)
- 
+
             return res.data;
         },
 
@@ -31,10 +31,7 @@ const useCart = () => {
 
 
     })
-    return { 
-        
-        
-        cart, refetch }
+    return { cart, refetch }
 }
 
 export default useCart;

@@ -25,14 +25,14 @@ const Dhasboard = () => {
                     {/* Sidebar content here */}
                     {
                         isAdmin ? <>
-                            <li><NavLink to='/dashboard/home'><FaHome /> Admin Home</NavLink></li>
+                            <li><NavLink to='/dashboard/adminhome'><FaHome /> Admin Home</NavLink></li>
                             <li><NavLink to='/dashboard/additem'><FaUtensils /> Add items</NavLink></li>
                             <li><NavLink to='/dashboard/manageitems'><FaWallet /> Manage Items</NavLink></li>
                             <li><NavLink to='/dashboard/bookings'><FaBook/> Manage Booking</NavLink></li>
                             <li><NavLink to='/dashboard/allusers'><FaUsers /> All Users</NavLink></li>
                            
                         </> : <>
-                            <li><NavLink to='/dashboard/home'><FaHome /> User Home</NavLink></li>
+                            <li><NavLink to='/dashboard/userhome'><FaHome /> User Home</NavLink></li>
                             <li><NavLink to='/dashboard/reservation'><FaCalendar /> Reservations</NavLink></li>
                             <li><NavLink to='/dashboard/history'><FaWallet /> Payment History</NavLink></li>
                             <li><NavLink to='/dashboard/mycart'><FaShoppingCart /> My Cart <span className="badge badge-secondary">+{cart?.length || 0}</span></NavLink></li>

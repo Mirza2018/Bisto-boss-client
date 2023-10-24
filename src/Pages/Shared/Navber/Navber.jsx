@@ -3,18 +3,21 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
+import useAdmin from "../../../hooks/useAdmin";
 
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext)
     const { cart } = useCart()
+    const [isAdmin]=useAdmin()
     //console.log(cart);
     const lis = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Menu</Link></li>
         <li><Link to='/order/salad'>Order</Link></li>
-        <li><Link to='/dashboard/mycart'>Dashbord</Link></li>
-        <li><Link to='/'>
+        <li><Link to={isAdmin?'/dashboard/adminhome':'/dashboard/userhome'}>Dashbord</Link></li>
+
+        <li><Link to='/dashboard/mycart'>
             <button className="btn">
                 <FaShoppingCart />
                 <div className="badge badge-secondary">+{cart?.length || 0}</div>
