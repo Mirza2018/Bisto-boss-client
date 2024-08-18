@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import useAuth from '../../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import './CheckoutFrom.css'
+// import './CheckoutFrom.css'
 
 const CheckoutForm = ({ price, cart }) => {
     const { user } = useAuth()

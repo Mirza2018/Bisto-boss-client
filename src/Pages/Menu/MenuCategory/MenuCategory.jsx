@@ -1,14 +1,13 @@
-import React from 'react';
 import MenuItem from '../../Shared/MenuItem/MenuItem';
 import Cover from '../../Shared/Cover/Cover';
 import { Link } from 'react-router-dom';
 
 const MenuCategory = ({ items, img, title }) => {
     return (
-        <div>
+        <div className=''>
             {title && <Cover img={img} title={title?title:'Our Menu'}></Cover>
             }
-            <div className="grid md:grid-cols-2 gap-10 my-20">
+            <div className="grid md:grid-cols-2 gap-10 my-20 p-4 content-center">
                 {
                     items.map(item => <MenuItem
                         item={item}
@@ -16,7 +15,8 @@ const MenuCategory = ({ items, img, title }) => {
                     ></MenuItem>)
                 }
             </div>
-            <Link to={`/order/${title}`}><button className="btn btn-outline border-0 rounded-lg border-b-4 ">Order Now</button></Link>
+            
+            <Link className='' to={`/order/${title}`}><div className='text-center'><button className="btn btn-outline border-0 rounded-lg  bg-orange-400 text-white mb-4">Order Now</button></div></Link>
             
         </div>
     );

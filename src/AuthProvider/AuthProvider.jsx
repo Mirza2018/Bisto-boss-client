@@ -14,14 +14,14 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
-
+setLoadding(false)
             //get jwt
             if (currentUser) {
                 axios.post('http://localhost:5000/jwt', { email: currentUser.email })
                     .then(data => {
                         //console.log(data.data.token, 'axios data');
                         localStorage.setItem('access-token', data.data.token)
-                        setLoadding(false)
+                        
                     })
 
             }
@@ -38,10 +38,14 @@ const AuthProvider = ({ children }) => {
     }, [auth])
 
 
+
+
     const handleLogin = (email, pass) => {
         setLoadding(true)
         return signInWithEmailAndPassword(auth, email, pass)
     }
+
+    
     const handleSignIn = (email, pass) => {
         setLoadding(true)
         return createUserWithEmailAndPassword(auth, email, pass)
@@ -54,6 +58,7 @@ const AuthProvider = ({ children }) => {
         setLoadding(true)
         return signOut(auth)
     }
+    
     const updateUserProfile = (name, url) => {
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: url

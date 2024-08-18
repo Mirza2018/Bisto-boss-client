@@ -69,29 +69,30 @@ const MyCart = () => {
                     </thead>
                     <tbody>
                         {
-                            cart.map((row, index) => <tr key={row._id} >
-                                <td>
-                                    <label>
-                                        {index + 1}
-                                    </label>
-                                </td>
-                                <td>
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src={row.image} />
+                            cart.map((row, index) =>
+                                <tr key={row._id} >
+                                    <td>
+                                        <label>
+                                            {index + 1}
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
+                                                <img src={row.image} />
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    {row.name}
-                                    <br />
-                                    <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                                </td>
-                                <td className="text-end">${row.price}</td>
-                                <td>
-                                    <button onClick={() => handleDelete(row._id)} className="btn btn-ghost bg-red-600 text-white"><FaTrashAlt /></button>
-                                </td>
-                            </tr>)
+                                    </td>
+                                    <td>
+                                        {row.name}
+                                        <br />
+                                        <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                                    </td>
+                                    <td className="text-end">${row.price}</td>
+                                    <td>
+                                        <button onClick={() => handleDelete(row._id)} className="btn btn-ghost bg-red-600 text-white"><FaTrashAlt /></button>
+                                    </td>
+                                </tr>)
                         }
 
 

@@ -1,5 +1,5 @@
 import { FaBook, FaCalendar, FaHome, FaShoppingCart, FaUsers, FaUtensils, FaWallet } from "react-icons/fa";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 
@@ -33,8 +33,8 @@ const Dhasboard = () => {
                            
                         </> : <>
                             <li><NavLink to='/dashboard/userhome'><FaHome /> User Home</NavLink></li>
-                            <li><NavLink to='/dashboard/reservation'><FaCalendar /> Reservations</NavLink></li>
-                            <li><NavLink to='/dashboard/history'><FaWallet /> Payment History</NavLink></li>
+                            <li><Link to=''><FaCalendar /> Reservations</Link></li>
+                            <li><Link to='#'><FaWallet /> Payment History</Link></li>
                             <li><NavLink to='/dashboard/mycart'><FaShoppingCart /> My Cart <span className="badge badge-secondary">+{cart?.length || 0}</span></NavLink></li>
                         </>
                     }

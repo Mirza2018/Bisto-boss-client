@@ -2,6 +2,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import img from '../../../assets/home/featured.jpg'
 import moment from "moment/moment";
 import './Featured.css'
+import { Link } from "react-router-dom";
 
 
 const Featured = () => {
@@ -19,11 +20,11 @@ const Featured = () => {
                 </div>
                 <div className="md:ml-10">
                     <p className="text-xl">{moment().format('MMMM Do, YYYY')}</p>
-                    <h1 className="uppercase text-2xl">Where can i get Some?</h1>
+                    <h1 className="uppercase text-2xl">What is healthy eating?</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias molestiae consequatur deserunt suscipit, ratione nesciunt! Sapiente repudiandae quasi nesciunt ducimus odio unde. Nulla totam deleniti repellendus maiores recusandae reiciendis minus excepturi molestias unde porro saepe accusantium, quidem ullam vel dolorum quos officia voluptatibus eum quo facilis, possimus hic. Numquam, ipsa.
+                    Healthy eating is not about strict limitations, staying unrealistically thin, or depriving yourself of the foods you love. Rather, it’s about eating well-balanced meals that leave you feeling great, having more energy, improving your health, and boosting your mood.
                     </p>
-                    <button className="btn btn-outline border-0 text-white rounded-lg border-b-4  border-white">Order Now</button>
+                    <Link className='' to="/order/salad"> <button  className="btn btn-outline border-0 rounded-lg  bg-orange-400 text-white mt-3">Order Now</button></Link>
 
                 </div>
             </div >

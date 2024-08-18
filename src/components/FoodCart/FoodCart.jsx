@@ -57,14 +57,14 @@ const FoodCart = ({ item }) => {
     }
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 shadow-xl bg-white text-black">
             <figure><img src={image} alt="Shoes" /></figure>
-            <p className='bg-slate-900 text-white absolute right-0 px-4 mt-4 mr-4'>${price}</p>
+            <p className='bg-slate-900 text-white absolute right-0 px-4 mt-4 mr-4 p-1 rounded-md '>${price}</p>
             <div className="card-body  flex flex-col items-center">
                 <h2 className="card-title">{name}</h2>
                 <p>{recipe}</p>
                 <div className="card-actions justify-end">
-                    <button onClick={() => handleAddToCart(item)} className="btn btn-outline border-0 rounded-lg border-b-4 border-orange-400 bg-slate-200">Add to cart</button>
+                    <button onClick={() => handleAddToCart(item)} className="btn btn-outline border-0 rounded-lg  bg-orange-400 text-white ">Add to cart</button>
                 </div>
             </div>
 

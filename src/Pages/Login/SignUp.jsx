@@ -86,9 +86,9 @@ const SignUp = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center md:1/2 lg:text-left">
                         <h1 className="text-5xl font-bold">Register Now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <p className="py-6"></p>
                     </div>
-                    <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+                    <div className="card md:w-1/2 max-w-sm shadow-2xl bg-white">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
 
@@ -96,7 +96,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" name="name" {...register("name", { required: true })} placeholder="Name" className="input input-bordered" />
+                                <input type="text" name="name" {...register("name", { required: true })} placeholder="Name" className="input input-bordered bg-white" />
                                 {errors.name && <span className="text-red-600">Name is required</span>}
                             </div>
 
@@ -105,7 +105,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Photo Url</span>
                                 </label>
-                                <input type="text"  {...register("url", { required: true })} placeholder="Photo Url" className="input input-bordered" />
+                                <input type="text"  {...register("url", { required: true })} placeholder="Photo Url" className="input input-bordered bg-white" />
                                 {errors.url && <span className="text-red-600">Photo Url is required</span>}
                             </div>
 
@@ -115,12 +115,12 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered" />
+                                <input type="email" name="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered bg-white" />
                                 {errors.email && <span className="text-red-600">Email is required</span>}
                             </div>
 
 
-                            <div className="form-control">
+                            <div className="form-control ">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
@@ -129,14 +129,14 @@ const SignUp = () => {
                                     minLength: 6,
                                     maxLength: 20,
                                     pattern: /(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])/,
-                                })} placeholder="password" className="input input-bordered" />
+                                })} placeholder="password" className="input input-bordered bg-white" />
                                 {errors.password?.type === 'required' && <span className="text-red-600">Password is required</span>}
                                 {errors.password?.type === 'minLength' && <span className="text-red-600">Password is must be bigger then 6 charecter </span>}
                                 {errors.password?.type === 'maxLength' && <span className="text-red-600">Password is must be smaller then 20 charecter </span>}
                                 {errors.password?.type === 'pattern' && <span className="text-red-600">Password must have one uppercase one lowercase one spacial cheracter </span>}
 
                                 <label className="label">
-                                    Alreday Have Account?<Link to='/login'> <a href="#" className="label-text-alt link link-hover">Login!!!</a></Link>
+                                    Alreday Have Account?<Link to='/login'> <a href="#" className="label-text-alt link link-hover text-blue-500 font-bold underline ms-4">Login!!!</a></Link>
                                 </label>
                             </div>
 

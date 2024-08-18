@@ -1,6 +1,7 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import MenuItem from "../../Shared/MenuItem/MenuItem";
 import useMenu from "../../../hooks/useMenu";
+import { Link } from "react-router-dom";
 
 
 const PopulerMenu = () => {
@@ -34,9 +35,10 @@ const PopulerMenu = () => {
                 }
             </div>
             <div className="mx-auto text-center my-5">
-                <button className="px-14  btn btn-outline border-0  rounded-lg border-b-4  ">Order Now</button></div>
+            <Link className='' to="/order/salad"> <button  className="btn btn-outline border-0 rounded-lg  bg-orange-400 text-white">Order Now</button></Link>
+               </div>
         </div>
     );
 };
-
+ 
 export default PopulerMenu;

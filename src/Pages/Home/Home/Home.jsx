@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-white text-black'>
             <Helmet>
                 <title>Bistro Boss | Home</title>
             </Helmet>
