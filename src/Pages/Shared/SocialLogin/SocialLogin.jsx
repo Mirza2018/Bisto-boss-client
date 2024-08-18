@@ -16,7 +16,7 @@ const SocialLogin = () => {
                 const saveData = { name: logedInUser.displayName, email: logedInUser.email }
 
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://bisto-boss-server.onrender.com/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

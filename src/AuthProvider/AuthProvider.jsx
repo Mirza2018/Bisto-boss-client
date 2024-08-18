@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
 setLoadding(false)
             //get jwt
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                axios.post('https://bisto-boss-server.onrender.com/jwt', { email: currentUser.email })
                     .then(data => {
                         //console.log(data.data.token, 'axios data');
                         localStorage.setItem('access-token', data.data.token)
