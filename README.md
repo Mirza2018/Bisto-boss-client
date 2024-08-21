@@ -65,7 +65,7 @@ npm run dev
 ## **Project Structure**
 
 ```plaintext
-ecommerce-app/
+bisto-boss/
 ├── public/
 ├── src/
 │   ├── assets/              # Images, icons, etc.
