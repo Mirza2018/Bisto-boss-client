@@ -25,7 +25,7 @@ const MyCart = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`https://bisto-boss-server.onrender.com/carts/${id}`, {
+                fetch(`https://bisto-boss-server-mirza2018s-projects.vercel.app/carts/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

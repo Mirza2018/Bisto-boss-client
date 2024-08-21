@@ -16,7 +16,7 @@ import '@smastrom/react-rating/style.css'
 const Testimonial = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('https://bisto-boss-server.onrender.com/reviews')
+        fetch('https://bisto-boss-server-mirza2018s-projects.vercel.app/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

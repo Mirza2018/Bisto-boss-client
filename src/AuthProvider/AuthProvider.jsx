@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
 setLoadding(false)
             //get jwt
             if (currentUser) {
-                axios.post('https://bisto-boss-server.onrender.com/jwt', { email: currentUser.email })
+                axios.post('https://bisto-boss-server-mirza2018s-projects.vercel.app/jwt', { email: currentUser.email })
                     .then(data => {
                         //console.log(data.data.token, 'axios data');
                         localStorage.setItem('access-token', data.data.token)

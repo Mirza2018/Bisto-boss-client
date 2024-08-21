@@ -5,7 +5,7 @@ import useAuth from './useAuth';
 
 
 const axiosSecure = axios.create({
-  baseURL: 'https://bisto-boss-server.onrender.com',
+  baseURL: 'https://bisto-boss-server-mirza2018s-projects.vercel.app',
 });
 const useAxiosSecure = () => {
   const { logOut } = useAuth();

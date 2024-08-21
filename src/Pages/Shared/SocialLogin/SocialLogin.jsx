@@ -16,7 +16,7 @@ const SocialLogin = () => {
                 const saveData = { name: logedInUser.displayName, email: logedInUser.email }
 
 
-                fetch('https://bisto-boss-server.onrender.com/users', {
+                fetch('https://bisto-boss-server-mirza2018s-projects.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

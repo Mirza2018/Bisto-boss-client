@@ -49,7 +49,7 @@ const CheckoutForm = ({ price, cart }) => {
             type: "card", card
         })
         if (error) {
-            console.log("error", error);
+            // console.log("error", error);
             setCardError(error.message)
 
         }
@@ -71,10 +71,11 @@ const CheckoutForm = ({ price, cart }) => {
             },
         );
         if (confrimError) {
-            console.log(confrimError);
+            // console.log(confrimError);
+            
         }
 
-        console.log("Payment Intent", paymentIntent);
+        // console.log("Payment Intent", paymentIntent);
         setProcessing(false)
         if (paymentIntent.status === "succeeded") {
             setTransectionId(paymentIntent.id)
@@ -88,7 +89,7 @@ const CheckoutForm = ({ price, cart }) => {
                 menuItems: cart.map(item => item.menuItemId),
                 itemName: cart.map(item => item.name)
             }
-            console.log(payment);
+            // console.log(payment);
             axiosSecure.post('/payment', payment)
                 .then(res => {
                     if (res.data.insertedId) {
@@ -100,7 +101,7 @@ const CheckoutForm = ({ price, cart }) => {
                             timer: 1500
                         })
                     }
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
 
         }

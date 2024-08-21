@@ -6,16 +6,7 @@ import { Link } from "react-router-dom";
 
 const PopulerMenu = () => {
     const [menu] = useMenu()
-    // const [menu, setMenu] = useState([])
-    // useEffect(() => {
-    //     fetch('menu.json')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             const remaning = data.filter(d => d.category === 'popular')
-    //             setMenu(remaning)
-    //         })
-    // }, [])
-
+   
     const popular = menu.filter(item => item.category === 'popular')
 
 

@@ -18,7 +18,7 @@ const FoodCart = ({ item }) => {
         //console.log(item);
         if (user && user.email) {
             const orderItem = { menuItemId: _id, name, image, price, email: user.email }
-            fetch('https://bisto-boss-server.onrender.com/carts', {
+            fetch('https://bisto-boss-server-mirza2018s-projects.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

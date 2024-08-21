@@ -22,10 +22,10 @@ const AddItem = () => {
                     const imageUrl = imgeResponse.data.display_url;
                     const { name, category, price, recipe } = data;
                     const menuItem = { name, category, price: parseFloat(price), recipe, image: imageUrl }
-                    console.log(menuItem);
+                    // console.log(menuItem);
                     axiosSecure.post('/menu', menuItem)
                         .then(data => {
-                            console.log(data.data);
+                            // console.log(data.data);
                             if (data.data.insertedId) {
                                 reset()
                                 Swal.fire({

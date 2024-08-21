@@ -16,7 +16,7 @@ const AllUsers = () => {
     })
 
     // const { data: users = [], refetch } = useQuery(['users'], async () => {
-    //     const res = await fetch('https://bisto-boss-server.onrender.com/users')
+    //     const res = await fetch('https://bisto-boss-server-mirza2018s-projects.vercel.app/users')
     //     return res.json();
     // })
 
@@ -24,7 +24,7 @@ const AllUsers = () => {
 
 
     const handleUpdateAdmin = (user) => {
-        fetch(`https://bisto-boss-server.onrender.com/users/admin/${user._id}`, {
+        fetch(`https://bisto-boss-server-mirza2018s-projects.vercel.app/users/admin/${user._id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
