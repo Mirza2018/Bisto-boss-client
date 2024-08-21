@@ -51,14 +51,14 @@ And It has fully funcional Admin Panel.
 To get started with this project, clone the repository and install the dependencies:
 
 ```bash
-https://github.com/Mirza2018/Bisto-boss-client.git
-cd Bisto-boss-client
+https://github.com/Mirza2018/bisto-boss.git
+cd bisto-boss
 npm install
 ```
 
 ### **Running the App**
 ```bash
-cd Bisto-boss-client
+cd bisto-boss
 npm run dev
 ```
 
