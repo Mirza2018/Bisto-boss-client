@@ -14,21 +14,18 @@ const Order = () => {
     const initialIndex = categories.indexOf(category)
 
     const [tabIndex, setTabindex] = useState(initialIndex)
-    const [menu] = useMenu()
+    // const [menu] = useMenu()
 
     //console.log(category);
     //console.log(initialIndex,'initialIndex');
 
 
-    const dessert = menu.filter(item => item.category === 'dessert')
-    const soup = menu.filter(item => item.category === 'soup')
-    const salad = menu.filter(item => item.category === 'salad')
-    const pizza = menu.filter(item => item.category === 'pizza')
-    const drinks = menu.filter(item => item.category === 'drinks')
+    const salad = useMenu("Dessert")[0].meals
+
     return (
         <div className='bg-white'>
             <Helmet>
-                <title>Bistro Boss | Order food</title>
+                <title>Dhakaiya food | Order food</title>
             </Helmet>
             <Cover img={img} title="Order menu"></Cover>
             <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabindex(index)}>
@@ -40,19 +37,19 @@ const Order = () => {
                     <Tab>Drinks</Tab>
                 </TabList>
                 <TabPanel>
-                    <OrderTab items={salad}></OrderTab>
+                    <OrderTab items={salad.slice(0,13)}></OrderTab>
                 </TabPanel>
                 <TabPanel>
-                    <OrderTab items={pizza}></OrderTab>
+                    <OrderTab items={salad.slice(13,26)}></OrderTab>
                 </TabPanel>
                 <TabPanel>
-                    <OrderTab items={soup}></OrderTab>
+                    <OrderTab items={salad.slice(27,41)}></OrderTab>
                 </TabPanel>
                 <TabPanel>
-                    <OrderTab items={dessert}></OrderTab>
+                    <OrderTab items={salad.slice(42,55)}></OrderTab>
                 </TabPanel>
                 <TabPanel>
-                    <OrderTab items={drinks}></OrderTab>
+                    <OrderTab items={salad.slice(56,72)}></OrderTab>
                 </TabPanel>
 
             </Tabs>

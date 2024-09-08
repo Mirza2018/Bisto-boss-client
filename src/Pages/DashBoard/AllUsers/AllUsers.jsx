@@ -47,7 +47,7 @@ const AllUsers = () => {
     return (
         <div className="w-full container">
             <Helmet>
-                <title>Bistro Boss | All users</title>
+                <title>Dhakaiya food | All users</title>
             </Helmet>
             <h3 className="text-3xl font-semibold my-4">Total Users: {
                 users.length

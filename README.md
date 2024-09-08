@@ -1,6 +1,6 @@
 # **Bistro Boss Food Order Management App**
 
-![Logo](https://i.ibb.co/M2NkQdN/Screenshot-2024-08-21-152000.png) 
+![Logo](/public/h1.png.png) 
 
 
 
@@ -88,29 +88,36 @@ bisto-boss/
 ## **Screenshots**
 
 #### **Running the App**
-![Home Page 1](https://i.ibb.co/M2NkQdN/Screenshot-2024-08-21-152000.png) 
-![Home Page 2](https://i.ibb.co/Y7jv9Jr/Screenshot-2024-08-21-152038.png) 
-![Home Page 3](https://i.ibb.co/XJt31nH/Screenshot-2024-08-21-152050.png) 
-
+![Home Page 1](/public/h1.png) 
+![Home Page 2](/public/h2.png) 
+![Home Page 3](/public/h3.png)
 #### **Menu Page**
-![Home Page 4](https://i.ibb.co/ctYPyY9/Screenshot-2024-08-21-152132.png) 
+![Menue Page 1](/public/m1.png)
+![Menue Page 2](/public/m2.png)
+![Menue Page 3](/public/m3.png)
+![Menue Page 4](/public/m4.png)
+![Menue Page 5](/public/m5.png)
 
-![Shopping page](https://i.ibb.co/dpZWPnf/Screenshot-2024-08-21-152141.png) 
 #### **Order By Categories Page**
-![Order Page 1](https://i.ibb.co/Kq6sRC7/Screenshot-2024-08-21-152209.png) 
-![Order Page 2](https://i.ibb.co/G5JGSjD/Screenshot-2024-08-21-152234.png) 
+![Order Page 1](/public/o1.png)
+![Order Page 2](/public/o2.png)
+![Order Page 3](/public/o3.png)
+![Order Page 4](/public/o4.png)
+![Order Page 5](/public/o5.png)
 
 #### **Register Page**
 
-![Register Page](https://i.ibb.co/3YGwBKT/Screenshot-2024-08-21-152302.png) 
+![Register Page](/public/r1.png)
 #### **Login Page**
-![Login Page](https://i.ibb.co/NVqFHzZ/Screenshot-2024-08-21-152253.png) 
+![Login Page](/public/l1.png)
 #### **My Cart**
-![Login Page](https://i.ibb.co/m666fqR/Screenshot-2024-08-21-152646.png) 
+![Login Page](/public/c1.png)
+
 #### **Payment Page**
-![Login Page](https://i.ibb.co/vz3HRHr/Screenshot-2024-08-21-155615.png) 
+![Login Page](/public/p1.png)
+
 #### **Stripe**
-![Login Page](https://i.ibb.co/Hn4PFxB/Screenshot-2024-08-21-155638.png) 
+![Login Page](/public/p2.png)
 
 
 
@@ -120,13 +127,14 @@ bisto-boss/
 
 
 #### **Admin Add Items Page**
-![Order History Page](https://i.ibb.co/HDcYz7m/Screenshot-2024-08-21-153019.png) 
+![Order History Page](/public/a1.png)
+
 #### **Admin Manage Items**
-![Admin Home Page](https://i.ibb.co/0fyh6TZ/Screenshot-2024-08-21-153033.png) 
+![Admin Home Page](/public/a2.png)
 
 #### **Admin All User Page**
 
-![Admin Add Items Page](https://i.ibb.co/BjFDfD3/Screenshot-2024-08-21-153108.png) 
+![Admin Add Items Page](/public/a3.png)
 
 
 

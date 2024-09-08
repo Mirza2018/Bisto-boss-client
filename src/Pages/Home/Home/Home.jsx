@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div className='bg-white text-black'>
             <Helmet>
-                <title>Bistro Boss | Home</title>
+                <title>Dhakaiya food | Home</title>
             </Helmet>
             <Banner></Banner>
             <Category></Category>

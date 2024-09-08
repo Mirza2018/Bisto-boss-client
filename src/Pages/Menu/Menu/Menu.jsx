@@ -11,28 +11,38 @@ import Cover from "../../Shared/Cover/Cover";
 
 const Menu = () => {
 
-    const [menu] = useMenu()
-    const dessert = menu.filter(item => item.category === 'dessert')
-    const soup = menu.filter(item => item.category === 'soup')
-    const salad = menu.filter(item => item.category === 'salad')
-    const pizza = menu.filter(item => item.category === 'pizza')
-    const offered = menu.filter(item => item.category === 'offered')
+    
+    const dessert = useMenu("Dessert")[0].meals
+
     return (
 
         <div>
             <Helmet>
-                <title>Bistro Boss | Menu</title>
+                <title>Dhakaiya food | Menu</title>
             </Helmet>
             <Cover img={img} title='Our Menu'></Cover>
             <SectionTitle
                 heading="Don't miss"
                 subHeading="today's offer"
             ></SectionTitle>
-            <MenuCategory items={offered} img={img} title='pizza'></MenuCategory>
-            <MenuCategory items={dessert} img={img1} title='dessert'></MenuCategory>
-            <MenuCategory items={pizza} img={img2} title='pizza'></MenuCategory>
-            <MenuCategory items={salad} img={img3} title='salad'></MenuCategory>
-            <MenuCategory items={soup} img={img4} title='soup'></MenuCategory>
+
+{
+   dessert && 
+   <>
+
+<MenuCategory items={dessert.slice(11,21)} img={img1} title='dessert'></MenuCategory>
+<MenuCategory items={dessert.slice(22,32)} img={img2} title='pizza'></MenuCategory>
+<MenuCategory items={dessert.slice(33,43)} img={img3} title='salad'></MenuCategory>
+<MenuCategory items={dessert.slice(44,54)} img={img4} title='soup'></MenuCategory>
+</>
+
+}
+
+
+
+
+
+
         </div>
     );
 };

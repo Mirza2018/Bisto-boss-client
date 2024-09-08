@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 
 const PopulerMenu = () => {
-    const [menu] = useMenu()
+    // const [menu] = useMenu()
    
-    const popular = menu.filter(item => item.category === 'popular')
+    const popular = useMenu("Dessert")[0].meals
 
 
     
@@ -19,9 +19,9 @@ const PopulerMenu = () => {
             ></SectionTitle>
             <div className="grid md:grid-cols-2 gap-10">
                 {
-                    popular.map(item => <MenuItem
+                    popular?.slice(10,30).map(item => <MenuItem
                         item={item}
-                        key={item._id}
+                        key={item.idMeal}
                     ></MenuItem>)
                 }
             </div>

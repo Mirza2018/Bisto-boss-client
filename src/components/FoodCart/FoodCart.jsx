@@ -7,7 +7,7 @@ import useCart from '../../hooks/useCart';
 
 
 const FoodCart = ({ item }) => {
-    const { name, image, price, recipe, _id } = item;
+    const {strMeal:name, strMealThumb:image, idMeal:price, recipe,} = item;
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
@@ -17,7 +17,7 @@ const FoodCart = ({ item }) => {
     const handleAddToCart = (item) => {
         //console.log(item);
         if (user && user.email) {
-            const orderItem = { menuItemId: _id, name, image, price, email: user.email }
+            const orderItem = { menuItemId: item.idMeal, name, image, price, email: user.email }
             fetch('https://bisto-boss-server-mirza2018s-projects.vercel.app/carts', {
                 method: 'POST',
                 headers: {
@@ -59,7 +59,7 @@ const FoodCart = ({ item }) => {
     return (
         <div className="card w-96 shadow-xl bg-white text-black">
             <figure><img src={image} alt="Shoes" /></figure>
-            <p className='bg-slate-900 text-white absolute right-0 px-4 mt-4 mr-4 p-1 rounded-md '>${price}</p>
+            <p className='bg-slate-900 text-white absolute right-0 px-4 mt-4 mr-4 p-1 rounded-md '>${price.slice(0,3)}</p>
             <div className="card-body  flex flex-col items-center">
                 <h2 className="card-title">{name}</h2>
                 <p>{recipe}</p>

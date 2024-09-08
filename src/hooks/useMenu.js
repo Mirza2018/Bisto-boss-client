@@ -1,13 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react"
 
-const useMenu = () => {
-
+const useMenu = (cat) => {
+ 
 
     const { data: menu = [], isLoading: loadding ,refetch} = useQuery({
-        queryKey: ["menu"],
+        queryKey: [""],
         queryFn: async () => {
-            const res = await fetch('https://bisto-boss-server-mirza2018s-projects.vercel.app/menu');
+            const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`);
             return res.json();
         }
     })

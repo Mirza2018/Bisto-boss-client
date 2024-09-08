@@ -26,8 +26,8 @@ const OrderTab = ({ items }) => {
             <SwiperSlide>
                 <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-10  my-4  items-center p-4'>
                     {
-                        items.slice(0, 6).map(item => <FoodCart
-                            key={item._id}
+                        items?.slice(0, 6).map(item => <FoodCart
+                            key={item.idMeal}
                             item={item}
                         ></FoodCart>)
                     }
@@ -37,8 +37,8 @@ const OrderTab = ({ items }) => {
             <SwiperSlide>
                 <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-10  my-4  items-center p-4'>
                     {
-                        items.slice(7, 12).map(item => <FoodCart
-                            key={item._id}
+                        items?.slice(7, 13).map(item => <FoodCart
+                            key={item.idMeal}
                             item={item}
                         ></FoodCart>)
                     }

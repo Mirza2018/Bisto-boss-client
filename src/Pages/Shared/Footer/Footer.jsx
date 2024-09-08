@@ -6,8 +6,8 @@ const Footer = () => {
             <div className="footer  p-10 bg-neutral text-neutral-content max-w-screen-xl">
                 <aside>
                   
-                <img className='w-12 h-12 object-cover' src={logo} alt="" />
-                    <p>Bistro boss<br />Providing quality food since 1999</p>
+                <img className='w-36 object-cover' src={logo} alt="" />
+                    <p>Dhakaiya food<br />Providing quality food since 1999</p>
                 </aside>
                 <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
                     <header className="footer-title">Social</header>
@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <div className="footer footer-center p-4 bg-neutral text-neutral-content">
                 <aside>
-                    <p>Copyright © {moment().format("YYYY")}  - All right reserved by Bistro Boss
+                    <p>Copyright © {moment().format("YYYY")}  - All right reserved by Dhakaiya food
 
                     </p>
                 </aside>
