@@ -1,6 +1,6 @@
 # **Bistro Boss Food Order Management App**
 
-![Logo](/public/h1.png.png) 
+![Logo](/public/h1.png) 
 
 
 
