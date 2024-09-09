@@ -1,4 +1,4 @@
-# **Bistro Boss Food Order Management App**
+# **Dhakaiya Food Order Management App**
 
 ![Logo](/public/h1.png) 
 
@@ -18,9 +18,7 @@
 
 ## **About**
 
-This is a full-fledged Food Order web application built with React.js. It allows users to browse food, add food to the cart, and proceed to checkout and payment. The app also includes user authentication, food management, and a responsive design that works seamlessly across different devices.
-And It has fully funcional Admin Panel.
-
+This is a MERN Food Order website. It allows users to browse food, add food to the cart, and proceed to checkout and payment. The app also includes user authentication, food order management, and a responsive design that works seamlessly across different devices. And it has a fully functional admin panel like add and edit food, order management, and manage users.
 ## **Features**
 
 - User Authentication (Sign Up, Login, Logout)
