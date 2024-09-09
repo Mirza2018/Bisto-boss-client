@@ -1,6 +1,6 @@
 # **Dhakaiya Food Order Management App**
 
-![Logo](/public/h1.png) 
+![Logo](/public/logo.png) 
 
 
 

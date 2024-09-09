@@ -1,5 +1,5 @@
 import moment from 'moment';
-import logo from  "../../../assets/logo.png"
+import logo from  "../../../../public/logo.png"
 const Footer = () => {
     return (
         <footer>

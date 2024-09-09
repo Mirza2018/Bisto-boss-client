@@ -51,7 +51,7 @@ const Navber = () => {
                     </ul>
                 </div>
                 {/* <a className="btn btn-ghost normal-case text-xl"></a> */}
-                <Link to='/'><img width={110} height={80} src="/src/assets/logo.png" alt="" /></Link>
+                <Link to='/'><img width={110} height={80} src="/logo.png" alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 flex items-center justify-center font-bold ">
